@@ -25,7 +25,8 @@ class Multilingual:
         for word in self.main_list:
             generated[word] = tr.translate(word)
         with open(self.path, 'w') as file:
-            self.words = yaml.dump(generated, file)
+            yaml.dump(generated, file, allow_unicode=True)
+        self.words = generated
 
     def read_language(self):
         with open(self.path) as file:
@@ -34,8 +35,3 @@ class Multilingual:
     def get(self, word):
         return self.words[word]
 
-
-"""
-- generate languages -> check target language at the initiation, if doesn't exist, generate it from main file and save
-- use multilingual -> get some string by string id, if id is not valid return none
-"""
