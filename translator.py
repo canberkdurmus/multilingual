@@ -3,6 +3,7 @@ import requests
 
 class Translator:
     def __init__(self, dst_lang, src_lang='en'):
+        # API DOC: https://mymemory.translated.net/doc/spec.php
         # TODO: Set key for more word translation limit
         self.src_lang = src_lang
         self.dst_lan = dst_lang
