@@ -1,6 +1,6 @@
 import os
 import yaml
-from translate import Translator
+from translator import Translator
 
 
 class Multilingual:
@@ -21,7 +21,7 @@ class Multilingual:
 
     def generate(self):
         generated = {}
-        tr = Translator(to_lang=self.target_language)
+        tr = Translator(dst_lang=self.target_language)
         for word in self.main_list:
             generated[word] = tr.translate(word)
         with open(self.path, 'w') as file:
@@ -34,4 +34,3 @@ class Multilingual:
 
     def get(self, word):
         return self.words[word]
-
