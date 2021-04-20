@@ -17,7 +17,6 @@ class Multilingual:
             self.main_list = file.read().split('\n')
 
         if os.path.isfile(self.path):
-            print(self.path)
             self.read_language()
         else:
             self.generate()
