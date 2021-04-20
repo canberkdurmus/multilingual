@@ -5,6 +5,9 @@ from translator import Translator
 
 class Multilingual:
     def __init__(self, target_language='en'):
+        # TODO: Add multilingual support for main.yaml file (set source language on initialization)
+        # TODO: Automatically detect source word list file language
+
         self.target_language = target_language.lower()
         self.words = {}
         self.main_list = []
@@ -33,4 +36,5 @@ class Multilingual:
             self.words = yaml.load(file, Loader=yaml.FullLoader)
 
     def get(self, word):
+        # TODO: translate the word at that moment if doesn't exist in the word list and cache it
         return self.words[word]
